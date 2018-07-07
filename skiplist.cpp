@@ -1,3 +1,8 @@
+#include <cstddef>
+#include <iostream>
+
+#define nullptr 0
+
 template <typename T>
 struct Node
 {
@@ -17,7 +22,7 @@ public:
     SkipList(): head(nullptr), n_elements(0) {}
     ~SkipList();
 
-    List<T>& operator=(const List& rhs);
+    SkipList<T>& operator=(const SkipList& rhs);
 
     // element access
     void insert(const T value);
@@ -27,7 +32,7 @@ public:
     T max();
 
     // getters
-    int n_elements() const {return n_elements;}
+    int nElements() const {return n_elements;}
 private:
     int n_elements;
     Node<T> *head;
