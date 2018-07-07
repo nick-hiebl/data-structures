@@ -7,7 +7,7 @@ template <typename T>
 struct Node
 {
     Node(): link(nullptr), value(0) {}
-    Node(const T val): link(nullptr), value(val) {}
+    Node(T const& val): link(nullptr), value(val) {}
     Node(const Node<T>* node): link(nullptr), value(node->value) {}
 
     Node<T> *link;
@@ -25,9 +25,9 @@ public:
     SkipList<T>& operator=(const SkipList& rhs);
 
     // element access
-    void insert(const T value);
-    void remove(const T value);
-    bool query(const T value);
+    void insert(T const& value);
+    void remove(T const& value);
+    bool query(T const& value);
     T min();
     T max();
 
